@@ -1,0 +1,15 @@
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\bin\Debug\net6.0\Core.dll
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\bin\Debug\net6.0\Core.pdb
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+D:\dotnetAPI\Skinet\Skinet\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
