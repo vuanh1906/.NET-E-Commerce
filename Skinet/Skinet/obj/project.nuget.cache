@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HuIJ57ddoONYVYgVo8m4mBIEhAJd+MIq73Nu98lw8jnyLyVoI01Y2nO4Xcqn8ybXF0aGCW3CThsl3Iy8syPzug==",
+  "dgSpecHash": "U/Nezjtycbm1XE2Mgxptbbrju7KvmJ5j2eXgtW1sRTTNjW3K5k4/WDbd44qiIouNuQrC7TyzQ/IHkhzAxl/p6g==",
   "success": true,
-  "projectFilePath": "D:\\dotnetAPI\\Skinet\\Skinet\\Skinet\\Skinet.csproj",
+  "projectFilePath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Skinet\\Skinet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vuanh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vuanh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

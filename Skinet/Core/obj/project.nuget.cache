@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TB8Ct8MoJ5ojSPxGHZvnlMFKTPx0xFuks+3HkbkrJhljKiO3rY0a0OlEC8coFeU0bOQNI0QQZXrJBYni78AmQQ==",
+  "dgSpecHash": "kKYtHWuJ+0PUTsa5gwVptbyTi04ezokXUZ3KB5PrrBzkZHd0WtPnxWvTSHuVwFFNgF+gubi+pITJ2Ki140Od5w==",
   "success": true,
-  "projectFilePath": "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj",
+  "projectFilePath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

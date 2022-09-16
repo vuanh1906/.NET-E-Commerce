@@ -63,3 +63,13 @@ D:\dotnetAPI\Skinet\Skinet\Skinet\obj\Debug\net6.0\Skinet.pdb
 D:\dotnetAPI\Skinet\Skinet\Skinet\obj\Debug\net6.0\Skinet.genruntimeconfig.cache
 D:\dotnetAPI\Skinet\Skinet\Skinet\obj\Debug\net6.0\ref\Skinet.dll
 D:\dotnetAPI\Skinet\Skinet\Skinet\obj\Debug\net6.0\Skinet.MvcApplicationPartsAssemblyInfo.cs
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.csproj.AssemblyReference.cache
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.AssemblyInfoInputs.cache
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.AssemblyInfo.cs
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.csproj.CoreCompileInputs.cache
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.MvcApplicationPartsAssemblyInfo.cs
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.MvcApplicationPartsAssemblyInfo.cache
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.dll
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\refint\Skinet.dll
+D:\dotnetAPI\.NET-6-with-Angular\Skinet\Skinet\obj\Debug\net6.0\Skinet.pdb

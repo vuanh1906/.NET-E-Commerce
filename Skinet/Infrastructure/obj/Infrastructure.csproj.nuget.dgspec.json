@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj": {
+    "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj",
+        "projectPath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\vuanh\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\obj\\",
+        "outputPath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vuanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\vuanh\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\obj\\",
+        "outputPath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vuanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj": {
-                "projectPath": "D:\\dotnetAPI\\Skinet\\Skinet\\Core\\Core.csproj"
+              "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj": {
+                "projectPath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Core\\Core.csproj"
               }
             }
           }

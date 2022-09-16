@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LQp0zi5pb6A/l3EPFWjXnoUmDS9pFwEhVWdLgzizdZEEfNm+l+ewgk2iJAsWo/SIA/QG7VhUf7kaPA4+Zr1qxA==",
+  "dgSpecHash": "WlpJ9xYH6RftzI+Mnp1NDkFHe5I4jSVQcPXPBR18R76gDlNOZudH0JD8vwdsb79HR8eeOYUOgH7OvHFy09w+8w==",
   "success": true,
-  "projectFilePath": "D:\\dotnetAPI\\Skinet\\Skinet\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\dotnetAPI\\.NET-6-with-Angular\\Skinet\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vuanh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vuanh\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
