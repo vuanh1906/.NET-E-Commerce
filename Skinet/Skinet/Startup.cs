@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Data;
 using Core.Interfaces;
+using Skinet.Helpers;
 
 namespace Skinet
 {
@@ -31,6 +32,7 @@ namespace Skinet
         {
             services.AddScoped< IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
@@ -52,6 +54,8 @@ namespace Skinet
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
