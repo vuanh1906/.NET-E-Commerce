@@ -30,6 +30,7 @@ namespace Skinet.Controllers
             var thing = _context.Products.Find(42);
 
             var thingToReturn = thing.ToString();
+
             return Ok();
         }
         
