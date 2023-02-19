@@ -41,10 +41,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
                 <Box display='flex' alignItems='center'>
-                    <Typography component={NavLink}
-                        to='/'
-                        exact
-                        sx={navStyles}>
+                    <Typography variant="h6" component={NavLink} to='/'>
                         Skinet
                     </Typography>
                     <CustomizedSwitch handleThemeChange={handleThemeChange} darkMode={darkMode} />
