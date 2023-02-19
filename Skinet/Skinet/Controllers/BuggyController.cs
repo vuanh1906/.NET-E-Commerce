@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Skinet.Errors;
 
 namespace Skinet.Controllers
@@ -44,6 +45,21 @@ namespace Skinet.Controllers
         public IActionResult GetNotFoundRequest(int id)
         {
             return BadRequest();
+        }
+
+        [HttpGet("unauthorised")]
+
+        public ActionResult GetUnauthorised()
+        {
+            return Unauthorized(new ApiResponse(401));
+        }
+
+        [HttpGet("validation-error")]
+        public ActionResult GetValidationError()
+        {
+            ModelState.AddModelError("Problem1", "This is the first error");
+            ModelState.AddModelError("Problem2", "This is the second error");
+            return ValidationProblem();
         }
     }
 }

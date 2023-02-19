@@ -4,13 +4,13 @@
     {
         public ApiResponse(int statusCode, string message = null)
         {
-            StatusCode = statusCode;
-            Message = message ?? GetDefaultMessageForStatusCode(statusCode);
+            status = statusCode;
+            title = message ?? GetDefaultMessageForStatusCode(statusCode);
         }
 
    
-        public int StatusCode { get; set; }
-        public string Message { get; set; }
+        public int status { get; set; }
+        public string title { get; set; }
 
         private string GetDefaultMessageForStatusCode(int statusCode)
         {
