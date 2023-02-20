@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skinet", "Skinet\Skinet.csproj", "{D22E5B17-2D2D-4D5C-82CB-E94D6A59390C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "Skinet\API.csproj", "{D22E5B17-2D2D-4D5C-82CB-E94D6A59390C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{66180754-C389-4851-8432-CCE170689940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{66180754-C389-4851-8432-CCE170689940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E1CA7284-5543-46D1-93BE-D9ABD4E97EE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E1CA7284-5543-46D1-93BE-D9ABD4E97EE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
