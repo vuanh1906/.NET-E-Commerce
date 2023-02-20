@@ -1,13 +1,17 @@
 
 import axios, { AxiosResponse, AxiosError } from "axios";
+import { resolve } from "path";
 import { toast } from "react-toastify";
 import { router } from "../router/Routes";
+
+const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
 axios.defaults.baseURL = 'https://localhost:5001/api/';
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-axios.interceptors.response.use(response => {
+axios.interceptors.response.use(async response => {
+    await sleep();
     return response
 }, (error: AxiosError) => {
     console.log(error.response)
