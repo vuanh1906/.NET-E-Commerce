@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Core.Entities;
 using System.Reflection;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infrastructure.Data
 {
@@ -14,6 +13,7 @@ namespace Infrastructure.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

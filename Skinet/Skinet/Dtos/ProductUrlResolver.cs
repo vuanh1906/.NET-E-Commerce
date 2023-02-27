@@ -6,7 +6,7 @@ namespace Skinet.Dtos
     public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDto, string>
     {
         private readonly IConfiguration _config;
-
+         
         public ProductUrlResolver(IConfiguration config)
         {
             _config = config;

@@ -1,5 +1,6 @@
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Badge, Box, IconButton, List, ListItem, Toolbar, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 import CustomizedSwitch from "../../features/catalog/CustomizeSwitch";
@@ -41,7 +42,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
                 <Box display='flex' alignItems='center'>
-                    <Typography variant="h6" component={NavLink} to='/'>
+                    <Typography variant="h6" component={NavLink} to='/' style={navStyles}>
                         Skinet
                     </Typography>
                     <CustomizedSwitch handleThemeChange={handleThemeChange} darkMode={darkMode} />
@@ -62,7 +63,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                 </List>
 
                 <Box display='flex' alignItems='center'>
-                    <IconButton size='large' sx={{ color: 'inherit' }}>
+                    <IconButton component={Link} to='/basket' size='large' sx={{ color: 'inherit' }}>
                         <Badge badgeContent={4} color='secondary'>
                             <ShoppingCart />
                         </Badge>

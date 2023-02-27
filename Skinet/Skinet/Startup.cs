@@ -29,7 +29,7 @@ namespace Skinet
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+                    policy.AllowAnyMethod().WithOrigins("http://localhost:3000").AllowAnyHeader().AllowCredentials();
                 });
             });
 
