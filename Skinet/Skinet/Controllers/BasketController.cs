@@ -76,11 +76,9 @@ namespace Skinet.Controllers
             var buyerId = Guid.NewGuid().ToString();
             var cookieOptions = new CookieOptions
             {
+                HttpOnly = false,
                 IsEssential = true,
                 Expires = DateTime.Now.AddDays(30),
-                SameSite = SameSiteMode.Lax,
-                Secure = true,
-                HttpOnly = true
             };
             Response.Cookies.Append("buyerId", buyerId, cookieOptions);
             var basket = new Basket { BuyerId = buyerId };

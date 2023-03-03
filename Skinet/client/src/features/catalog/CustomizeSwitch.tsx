@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
+import React from 'react';
 
 interface Props {
   darkMode: boolean;
