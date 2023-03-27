@@ -12,11 +12,13 @@ namespace Skinet.Controllers
     public class BasketController : BaseApiController
     {
         private readonly IGenericRepository<Product> _productRepo;
+        private readonly IBasketRepository _basketRepo;
         private StoreContext _context { get; set; }
-        public BasketController(IGenericRepository<Product> productRepo, StoreContext context)
+        public BasketController(IGenericRepository<Product> productRepo, StoreContext context, IBasketRepository basketRepo)
         {
             _productRepo = productRepo;
             _context = context;
+            _basketRepo = basketRepo;
         }
 
         [HttpGet(Name = "GetBasket")]
@@ -32,14 +34,13 @@ namespace Skinet.Controllers
         {
             var basket = await RetrieveBasket();
             if (basket == null) basket = CreateBasket();
-            var a = Response.Cookies;
             var spec = new ProductsWithTypesAndBrandsSpecification(productId);
             var product = await _productRepo.GetEntityWithSpec(spec);
 
             if (product == null) return NotFound();
 
-            basket.AddItem(product, quantity);
-            var result = await _context.SaveChangesAsync() > 0;
+            _basketRepo.AddItem(basket, product, quantity);
+            var result = await _basketRepo.SaveAsync() > 0;
             if (result) return CreatedAtRoute("GetBasket", MapBasketToDto(basket));
             return BadRequest(new ApiResponse(400, "Problem saving item to basket"));
         }
@@ -50,8 +51,8 @@ namespace Skinet.Controllers
             var basket = await RetrieveBasket();
             if (basket == null) return NotFound();
 
-            basket.RemoveItem(productId, quantity);
-            var result = await _context.SaveChangesAsync() > 0;
+            _basketRepo.RemoveItem(basket, productId, quantity);
+            var result = await _basketRepo.SaveAsync() > 0;
 
             if (result) return StatusCode(201);
             return BadRequest(new ApiResponse(400, "Problem removing item from the basket"));
@@ -88,7 +89,7 @@ namespace Skinet.Controllers
 
         private BasketDto MapBasketToDto(Basket basket)
         {
-            var a = new BasketDto
+            return new BasketDto
             {
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
@@ -103,7 +104,6 @@ namespace Skinet.Controllers
                     Quantity = item.Quantity
                 }).ToList()
             };
-            return a;
         }
     }
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 import CustomizedSwitch from "../../features/catalog/CustomizeSwitch";
+import { useAppSelector } from "../../features/store/configureStore";
 import { useStoreContext } from "../context/StoreContext";
 
 
@@ -37,7 +38,7 @@ const navStyles = {
 }
 
 export default function Header({ darkMode, handleThemeChange }: Props) {
-    const {basket} = useStoreContext();
+    const {basket} = useAppSelector(state => state.basket);
     const itemCount = basket?.items.reduce((sum,item) => sum + item.quantity, 0);
     return (
 
