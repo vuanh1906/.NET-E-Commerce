@@ -37,7 +37,7 @@ namespace Skinet.Controllers
             var spec = new ProductsWithTypesAndBrandsSpecification(productId);
             var product = await _productRepo.GetEntityWithSpec(spec);
 
-            if (product == null) return NotFound();
+            if (product == null) return BadRequest(new ApiResponse(400, "Product not found"));
 
             _basketRepo.AddItem(basket, product, quantity);
             var result = await _basketRepo.SaveAsync() > 0;
