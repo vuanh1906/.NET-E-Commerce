@@ -6,15 +6,44 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Data
 {
     public class StoreContextSeed
     {
-        public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
+        public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory,UserManager<User> userManager)
         {
             try
             {
+                if (!userManager.Users.Any())
+                {
+                    var user = new User
+                    {
+                        UserName = "vuanh",
+                        Email = "vuanhng2660@gmail.com"
+                    };
+
+                    var result = await userManager.CreateAsync(user, "Pa$$w0rd");
+
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(user, "Member");
+                    }
+
+                    var admin = new User
+                    {
+                        UserName = "admin",
+                        Email = "admin@test.com"
+                    };
+
+                    result = await userManager.CreateAsync(admin, "Pa$$w0rd");
+
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRolesAsync(admin, new[] { "Admin", "Member" });
+                    }
+                } 
                 if (!context.ProductBrands.Any())
                 {
                     var brandsData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");

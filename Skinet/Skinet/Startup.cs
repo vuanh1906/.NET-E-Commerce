@@ -1,6 +1,8 @@
+using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
 using Skinet.Extensions;
 using Skinet.Helpers;
 using Skinet.Middleware;
@@ -33,7 +35,11 @@ namespace Skinet
                     policy.AllowAnyMethod().WithOrigins("https://localhost:3000").AllowAnyHeader().AllowCredentials();
                 });
             });
-
+            services.AddIdentityCore<User>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<StoreContext>();
+            services.AddAuthentication();
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

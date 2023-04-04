@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Core.Entities;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<User>
     {
         public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
@@ -19,6 +21,11 @@ namespace Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Entity<IdentityRole>()
+                .HasData(
+                    new IdentityRole { Name = "Member", NormalizedName = "MEMBER" },
+                    new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
+                );
             //modelBuilder.Entity<ProductBrand>().Property(p => p.Id).ValueGeneratedNever();
             //modelBuilder.Entity<Product>().Property(p => p.Id).ValueGeneratedNever();
             //modelBuilder.Entity<ProductType>().Property(p => p.Id).ValueGeneratedNever();
