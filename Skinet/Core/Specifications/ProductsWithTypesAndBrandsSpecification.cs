@@ -7,8 +7,8 @@ namespace Core.Specifications
         public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
             :base (x =>
                     (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains((productParams.Search))) &&
-                    (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) &&
-                    (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+                    (productParams.Brands == null || x.ProductBrand.Name.ToLower() == productParams.Brands.ToLower()) &&
+                    (productParams.Types == null || x.ProductType.Name.ToLower() == productParams.Types.ToLower())
             )
         {
             AddInclude(x => x.ProductType);

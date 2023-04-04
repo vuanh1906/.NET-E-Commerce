@@ -7,3 +7,12 @@ export interface Product {
     productType: string;
     productBrand: string;
 }
+
+export interface ProductParams {
+    sort: string;
+    search?: string;
+    types?: string[],
+    brands?: string[];
+    pageIndex: number;
+    pageSize: number;
+}

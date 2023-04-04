@@ -18,8 +18,8 @@ namespace Core.Specifications
             set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
 
-        public int? BrandId { get; set; }
-        public int? TypeId { get; set; }
+        public string? Brands { get; set; }
+        public string? Types { get; set; }
         public string? Sort { get; set; }
         private string _search { get; set; }
 

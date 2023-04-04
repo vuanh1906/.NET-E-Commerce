@@ -1,10 +1,12 @@
-﻿using Core.Entities;
+﻿using System.Text.Json;
+using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Core.Specifications;
 using Skinet.Dtos;
 using AutoMapper;
 using Skinet.Errors;
+using Skinet.Extensions;
 using Skinet.Helpers;
 
 namespace Skinet.Controllers
@@ -38,7 +40,9 @@ namespace Skinet.Controllers
             var products = await _productRepo.ListAsync(spec);
 
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
-            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
+            var paging = new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data);
+            Response.AddPaginationHeader(paging);
+            return Ok(data);
         }
 
         [HttpGet("{id}")]
@@ -65,6 +69,16 @@ namespace Skinet.Controllers
         {
             var productTypes = await _productTypeRepo.ListAllAsync();
             return Ok(productTypes);
+        }
+
+        [HttpGet("filters")]
+        public async Task<ActionResult<List<Product>>> GetFilters()
+        {
+            var productBrands = await _productBrandRepo.ListAllAsync();
+            var brands = productBrands.Select(x => x.Name).Distinct().ToList();
+            var productTypes = await _productTypeRepo.ListAllAsync();
+            var types = productTypes.Select(x => x.Name).Distinct().ToList();
+            return Ok(new { brands, types });
         }
     }
 }

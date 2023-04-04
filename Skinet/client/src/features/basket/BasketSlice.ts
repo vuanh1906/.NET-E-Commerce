@@ -18,7 +18,7 @@ export const addBasketItemAsync = createAsyncThunk<Basket, { productId: number, 
         try {
             return await agent.Basket.addItem(productId, quantity);
         } catch (error: any) {
-            return thunkAPI.rejectWithValue({error: error.data})
+            return thunkAPI.rejectWithValue({ error: error.data })
         }
     }
 )
@@ -30,7 +30,7 @@ export const removeBasketItemAsync = createAsyncThunk<void,
             try {
                 return await agent.Basket.addItem(productId, quantity);
             } catch (error: any) {
-                return thunkAPI.rejectWithValue({error: error.data})
+                return thunkAPI.rejectWithValue({ error: error.data })
             }
         }
     )
