@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './app/layout/style.css';
 import reportWebVitals from './reportWebVitals';
@@ -14,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
 <Provider store={store}>
       <RouterProvider router={router} />
-    </Provider>
+</Provider>
 );
 
 reportWebVitals();
