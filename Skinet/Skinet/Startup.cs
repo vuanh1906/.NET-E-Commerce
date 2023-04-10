@@ -1,11 +1,16 @@
+using System.Text;
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
+using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using Skinet.Extensions;
 using Skinet.Helpers;
 using Skinet.Middleware;
+using Microsoft.Extensions.Configuration;
 
 namespace Skinet
 {
@@ -21,7 +26,7 @@ namespace Skinet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
@@ -35,11 +40,27 @@ namespace Skinet
                     policy.AllowAnyMethod().WithOrigins("https://localhost:3000").AllowAnyHeader().AllowCredentials();
                 });
             });
-            services.AddIdentityCore<User>()
+            services.AddIdentityCore<User>(opt =>
+                {
+                    opt.User.RequireUniqueEmail = true;
+                })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<StoreContext>();
-            services.AddAuthentication();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey =
+                            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTSettings:TokenKey"]))
+                    };
+                });
             services.AddAuthorization();
+            services.AddScoped<TokenService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,10 +79,12 @@ namespace Skinet
 
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseSwaggerDocumentation();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -69,4 +92,3 @@ namespace Skinet
         }
     }
 }
- 
