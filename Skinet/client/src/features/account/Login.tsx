@@ -1,5 +1,4 @@
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -23,8 +22,9 @@ export default function Login() {
 
     async function submitForm(data: FieldValues) {
         var result = await dispatch(signInUser(data));
-        if (result.meta.arg.requestStatus === ("fulfilled"))
-            navigate('/catalog');
+        console.log(result)
+        if (result.meta.requestStatus === ("fulfilled"))
+            navigate('/catalog')
     }
 
     return (

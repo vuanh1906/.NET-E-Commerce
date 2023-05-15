@@ -1,4 +1,4 @@
-import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
+import { FormGroup, FormControlLabel, Checkbox, Radio, RadioGroup } from "@mui/material";
 import { useState } from "react";
 
 interface Props {
@@ -13,7 +13,7 @@ export default function CheckboxButton({ items, checked, onChange }: Props) {
     function handleChecked(value: string) {
         const currentIndex = checkedItems.findIndex(item => item === value);
         let newChecked: string[] = [];
-        if (currentIndex === -1) newChecked = [...checkedItems, value];
+        if (currentIndex === -1) newChecked = [value];
         else newChecked = checkedItems.filter(item => item !== value);
         setCheckedItems(newChecked);
         onChange(newChecked);

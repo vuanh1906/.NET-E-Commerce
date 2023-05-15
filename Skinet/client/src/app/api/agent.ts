@@ -1,5 +1,6 @@
 import axios, { AxiosResponse, AxiosError } from "axios"
 import { toast } from "react-toastify";
+import { store } from "../../features/store/configureStore";
 import { PaginatedResponse } from "../models/pagination";
 import { router } from "../router/Routes";
 
@@ -9,6 +10,12 @@ axios.defaults.baseURL = 'https://localhost:5001/api/';
 axios.defaults.withCredentials = true;
 
 const responseBody = (response: AxiosResponse) => response.data;
+
+axios.interceptors.request.use(config => {
+    const token = store.getState().account.user?.token;
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 
 axios.interceptors.response.use(async response => {
     await sleep();
@@ -24,7 +31,6 @@ axios.interceptors.response.use(async response => {
     const { data, status } = error.response as AxiosResponse;
     switch (status) {
         case 400:
-            
             if (data.errors) {
                 const modelStateErrors: string[] = [];
                 for (const key in data.errors) {

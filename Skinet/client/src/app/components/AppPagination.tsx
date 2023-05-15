@@ -10,8 +10,7 @@ export default function AppPagination({metaData, onPageChange}: Props) {
     const {totalPage, count, pageIndex, pageSize} = metaData;
     return (
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-        <Typography>Displaying 
-            {(pageIndex - 1)*pageSize+1}-
+        <Typography>Displaying {(pageIndex - 1) * pageSize +1 } -
             {pageIndex*pageSize > count ? count : pageIndex*pageSize} of {count} items
         </Typography>
         <Pagination
