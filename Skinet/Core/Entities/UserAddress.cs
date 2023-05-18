@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
 namespace Core.Entities
 {
-    public class User : IdentityUser<int>
+    public class UserAddress : Address
     {
-        public UserAddress Address { get; set; }
+        public int Id { get; set; }
     }
 }
