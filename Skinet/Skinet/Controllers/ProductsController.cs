@@ -42,7 +42,7 @@ namespace Skinet.Controllers
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
             var paging = new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data);
             Response.AddPaginationHeader(paging);
-            return Ok(data);
+            return Ok(paging);
         }
 
         [HttpGet("{id}")]
